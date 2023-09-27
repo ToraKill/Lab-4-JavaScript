@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Lab 4 | COMP1073 Client-Side JavaScript</title>
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<h1>Countdown</h1>
+	<!-- STEP 2 -->
+	<div class="countdown timer">
+		<table>
+
+			<td>
+			<th><span id="day"></span></th>
+			<th><span id="hour"></span></th>
+			<th><span id="minute"></span> </th>
+			<th><span id=" second"></span> </th>
+			</td>
+			<tfoot>
+				<td>
+				<th><span class="text">days</span></th>
+				<th><span class="text">hours</span></th>
+				<th><span class="text">minutes</span></th>
+				<th><span class="text">seconds</span></th>
+				</td>
+			</tfoot>
+		</table>
+
+	</div>
+
+
+
+	<script>
+		function() {
+			const second = 1000,
+				minute = second * 60,
+				hour = minute * 60,
+				day = hour * 24;
+
+
+			let today = new Date(),
+				dd = string(today.getDate()).padStart(2, "0"),
+				mm = string(today.getMonth() + 1).padStart(2, "0"),
+				yyyy = today.getFullYear(),
+				nextYear = yyyy + 1,
+				dayMonth = "09/03/",
+				setDate = dayMonth + yyyy;
+
+			today = mm + "/" + dd + "/" + yyyy;
+			if (today > setDate) {
+				setDate = dayMonth + nextYear;
+			}
+
+
+
+
+		}
+		// STEP 1: Open this page in a browser tab and open up the console
+		// STEP 3 THIS IS THE DO/WHILE LOOP I'M NOT 100% ON THIS THOUGH
+
+		//  var counter = 0;
+		// var interval = setInterval(function(){
+		// counter++;
+		// if(counter === 10){
+		// clearInterval(interval);
+		// }
+		// console.log("timer done");
+		// }, 10000);
+
+
+
+		// STEP 3 THIS ONE IS THE ORIGINAL VERSION THAT WAS INITIALLY A LOOP
+		//for (let i = 10; i >= 0; i--) {
+		//setTimeout(function() {
+		//console.log(i);
+		// STEP 4
+
+		// STEP 5
+		//}, 10000 - (1000 * i));
+		//};
+		// STEP 2: Build an HTML element above to contain the value of the var i (the counter inside the loop)
+		//code for timer// brad
+		const countDown = new Date(setDate).getTime(),
+		var i = setInterval(function ()){
+			var now = new Date().getTime(), i = countDown - now;
+
+		document.getElementById("days").innerText = Math.floor(i / (day));
+		document.getElementById("hours").innerText = Math.floor((i % (days)) / hour);
+		document.getElementById("minutes").innerText = Math.floor((i % (hour)) / (minute));
+		document.getElementById("seconds").innerText = Math.floor((i % (minute)) / second);
+
+
+
+
+
+
+
+
+
+		clearInterval(i)
+		}
+
+		// STEP 4: Add a condition with an IF statement that checks if countDown is zero - and if it is, output text to the HTML element above that reads, "Blastoff!"
+		// brad
+
+
+		if (countDown === 0) {
+			counter++
+			const breakMessage = document.querySelector('#Blastoff')
+			let endCounter = true;
+
+			endCounter ? breakMessage.textContent = 'Blastoff' : breakMessage.textContent = 'continue';
+		}
+
+
+
+		// STEP 5: Change the background color of the page from yellow (from 8-5) , to orange (from 4-1), to red (at 0) using a SWITCH statement
+		// brad
+		switch (countDown) {
+
+			case 8 - 5:
+				document.body.style.backgroundColor = 'yellow';
+
+				break;
+
+			case 4 - 1:
+				document.body.style.backgroundColor = 'orange';
+				break;
+
+			default:
+				document.body.style.backgroundColor = 'red';
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>
