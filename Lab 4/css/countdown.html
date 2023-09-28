@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Lab 4 | COMP1073 Client-Side JavaScript</title>
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<h1>Countdown</h1>
+
+	<p id="timer"></p>
+	<p id="Blastoff"></p>
+
+
+	<script>
+
+		// STEP 2: Build an HTML element above to contain the value of the var i (the counter inside the loop)
+		// function code for timer// brad
+
+		let countDown = new Date("Oct, 4 2023 20:18:25").getTime();
+
+		var i = setInterval(function () {
+			let now = new Date().getTime();
+			let j = countDown - now
+
+			let days = Math.floor(j / (1000 * 60 * 60 * 24));
+			let hours = Math.floor((j % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			let minutes = Math.floor((j % (1000 * 60 * 60)) / (1000 * 60));
+			let seconds = Math.floor((j % (1000 * 60)) / 1000);
+
+			document.getElementById("timer").innerHTML = days + "d" + hours + "h" + minutes + "m" + seconds + "s";
+
+			// statement to clear interval(original code.to run timer, also to clear. This code has to change to match question 3)
+			if (j < 0) {
+				clearInterval(i);
+				document.getElementById("timer").innerHTML = "Blastoff";
+			}
+		}, 1000);
+
+
+		// STEP 3 THIS IS THE DO/WHILE LOOP I'M NOT 100% ON THIS THOUGH // Weston
+
+		// var counter = 0;
+		// var interval = setInterval(function () {
+		// counter++;
+		// if (counter === 10) {
+		// clearInterval(interval);
+		// }
+		// console.log("timer done");
+		// }, 10000);
+
+
+
+		// STEP 3 THIS ONE IS THE ORIGINAL VERSION THAT WAS INITIALLY A LOOP
+		// for (let i = 10; i >= 0; i--) {
+		// setTimeout(function () {
+		// console.log(i);
+		//STEP 4
+		//STEP 5
+		// }, 10000 - (1000 * i));
+		// };
+
+
+		// STEP 4: Add a condition with an IF statement that checks if countDown is zero - and if it is, output text to the HTML element above that reads, "Blastoff!"
+		// brad
+
+
+		if (countDown === 0) {
+			output.textContent = `it\s time to ${Blastoff}`;
+
+		}
+		// STEP 5: Change the background color of the page from yellow (from 8-5) , to orange (from 4-1), to red (at 0) using a SWITCH statement
+		// brad
+
+		switch (countDown) {
+
+
+			case 8 - 5:
+
+
+				document.body.style.backgroundColor = 'yellow';
+
+				break;
+
+			case 4 - 1:
+
+				document.body.style.backgroundColor = 'orange';
+				break;
+
+			case 0:
+
+				document.body.style.backgroundColor = 'red';
+				break;
+
+			default:
+				document.body.style.background = 'green'
+				break;
+
+		}
+
+
+	</script>
+</body>
+
+</html>
