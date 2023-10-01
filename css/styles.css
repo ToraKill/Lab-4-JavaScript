@@ -1,21 +1,21 @@
 @charset "utf-8";
-html {
+
+body {
+	text-align: center;
 	font-family: sans-serif;
-	font-size: 200%;
-	transition: all 1s;
+	font-weight: 100;
 }
-/* Styles for invoice table
-------------------------------------------------------- */
-table {
-	border-collapse: collapse;
+
+/* Styling for heading */
+h1 {
+	color: black;
+	font-weight: 100;
+	font-size: 60px;
+	margin: 40px 0px 20px;
 }
-td, th {
-	border: 1px solid grey;
-	padding: 1em;
-}
-tfoot th {
-	text-align: right;
-}
-tfoot td {
-	font-weight: bold;
+
+p {
+
+	color: black;
+	font-size: 40px;
 }
